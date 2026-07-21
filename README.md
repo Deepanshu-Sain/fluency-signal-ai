@@ -2,7 +2,7 @@
 
 An AI collaboration assessment tool that measures **how effectively users work with AI during a realistic writing task**.
 
-The goal is not to evaluate the final email itself, but to understand the user's **AI collaboration behaviour** — how they prompt, verify information, iterate on drafts, and make independent decisions while working with an AI assistant.
+The goal is not to evaluate the final email itself, but to understand the user's **AI collaboration behaviour** - how they prompt, verify information, iterate on drafts, and make independent decisions while working with an AI assistant.
 
 Built as a full-stack Next.js application combining:
 
@@ -87,36 +87,62 @@ After submission, users receive an assessment report containing:
 
 
 ---
+## Tech Stack
 
-# Tech Stack
+<div align="center">
 
-## Frontend
+### Frontend
 
-- React 19
-- TypeScript
-- Next.js App Router
-- Tailwind CSS
-- React Markdown
+<img src="https://img.shields.io/badge/Next.js%2016-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+<img src="https://img.shields.io/badge/React%2019-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Tailwind%20CSS%204-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 
+<br />
 
-## AI Layer
+### AI & LLM Infrastructure
 
-- Vercel AI SDK
-- Google Gemini (`gemini-3.1-flash-lite`)
+<img src="https://img.shields.io/badge/Google%20Gemini%203.1%20Flash%20Lite-4285F4?style=for-the-badge&logo=google&logoColor=white" />
+<img src="https://img.shields.io/badge/Vercel%20AI%20SDK-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 
+<br />
 
-## Backend
+### Backend & Persistence
 
-- Next.js API Routes
-- SQLite
-- Better SQLite3
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+<img src="https://img.shields.io/badge/better--sqlite3-Database%20Driver-003B57?style=for-the-badge" />
 
+<br />
 
-## Additional Libraries
+### Libraries & Utilities
 
-- `diff` for draft change detection
-- `lucide-react` for UI icons
+<img src="https://img.shields.io/badge/React%20Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" />
+<img src="https://img.shields.io/badge/diff-Revision%20Tracking-orange?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Lucide%20React-Icons-F56565?style=for-the-badge" />
 
+<br />
+
+### Development Tools
+
+<img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" />
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+
+</div>
+
+## Architecture Overview
+
+The Fluency Signal is built as a full-stack AI assessment application combining a conversational AI interface, persistent session tracking, behavioral signal extraction, and LLM-based evaluation.
+
+The system consists of:
+
+- **Next.js App Router** handling frontend pages and backend API routes.
+- **Vercel AI SDK** powering streaming AI interactions.
+- **Google Gemini 3.1 Flash Lite** generating assistant responses and evaluation insights.
+- **SQLite with better-sqlite3** storing conversations, draft versions, edit events, and assessment data.
+- **Signal Analysis Layer** computing collaboration metrics from user behaviour.
+- **Evaluation Layer** using a second LLM call to generate evidence-based observations.
 
 ---
 ## Application Flow
@@ -854,10 +880,9 @@ A short walkthrough video demonstrating:
 - Editing the email
 - Generating the assessment report
 
-will be included with the repository submission.
 
+https://github.com/user-attachments/assets/94d0c702-b443-49b5-849a-a66f1f8ff8da
 
----
 
 ---
 
