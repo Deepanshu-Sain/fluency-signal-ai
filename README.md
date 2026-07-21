@@ -119,39 +119,145 @@ After submission, users receive an assessment report containing:
 
 
 ---
+## Application Flow
 
-# Application Flow
+The Fluency Signal follows a complete assessment pipeline where user interactions are captured, analyzed, and converted into measurable AI collaboration signals.
 
+```text
+                           User
+                            |
+                            v
+                  +------------------+
+                  |    Task Page     |
+                  |                  |
+                  | Outreach Brief   |
+                  | Email Workspace  |
+                  +------------------+
+                            |
+                            |
+              +-------------+-------------+
+              |                           |
+              v                           v
+    +----------------+          +----------------+
+    | AI Assistant   |          | Email Editor   |
+    |                |          |                |
+    | Gemini-powered |          | Rich text      |
+    | collaboration  |          | draft editor   |
+    +----------------+          +----------------+
+              |                           |
+              |                           |
+              v                           v
+    +----------------+          +----------------+
+    | Chat Messages  |          | Draft Versions |
+    |                |          |                |
+    | User prompts   |          | Email changes  |
+    | AI responses   |          | Edit history   |
+    +----------------+          +----------------+
+              \                           /
+               \                         /
+                v                       v
+                 +---------------------+
+                 |   SQLite Database   |
+                 |                     |
+                 | sessions            |
+                 | chat_messages       |
+                 | email_versions      |
+                 | edit_events         |
+                 +---------------------+
+                            |
+                            v
+              +----------------------------+
+              |     Signal Analysis        |
+              |                            |
+              | Prompt Count               |
+              | Verification Signals       |
+              | Edit Ratio                 |
+              | Collaboration Score        |
+              | Iteration Score            |
+              +----------------------------+
+                            |
+                            v
+              +----------------------------+
+              |    Gemini Evaluation       |
+              |                            |
+              | Evidence-based analysis    |
+              | of collaboration behaviour |
+              |                            |
+              +----------------------------+
+                            |
+                            v
+                 +------------------+
+                 |   Report Page    |
+                 |                  |
+                 | Scores           |
+                 | Signals          |
+                 | Strengths        |
+                 | Improvements     |
+                 +------------------+
 ```
-User
- |
- |
- v
-Task Page
- |
- |
- +----------------+
- |                |
- v                v
-AI Assistant    Email Editor
- |
- |
- v
-Database Storage
- |
- |
- v
-Signal Analysis
- |
- |
- v
-LLM Evaluation
- |
- |
- v
-Report Page
-```
+## Flow Explanation
 
+### 1. Task Completion
+
+The user receives a realistic cold outreach task and works on the email using two parallel surfaces:
+
+- **AI Assistant**
+  - Used for brainstorming, refinement, feedback, personalization, and challenging assumptions.
+
+- **Email Editor**
+  - Used for drafting, editing, and revising the final email response.
+
+---
+
+### 2. Interaction Capture
+
+Every meaningful interaction during the session is persisted in the database:
+
+- User and assistant chat messages are stored with timestamps.
+- Email draft versions are captured throughout the editing process.
+- Meaningful edit events are recorded by comparing changes between draft versions over time.
+
+---
+
+### 3. Signal Extraction
+
+After submission, the application analyzes the complete session and calculates measurable AI collaboration signals.
+
+#### Prompt Count
+
+Measures how frequently the user engaged with the AI assistant during the task.
+
+#### Verification Signal
+
+Detects whether the user attempted to validate information, question assumptions, request fact-checking, or review AI-generated suggestions.
+
+#### Edit Ratio
+
+Measures how much the email draft evolved through revision history instead of being accepted unchanged from the initial version.
+
+---
+
+### 4. AI-Based Evaluation
+
+A second Gemini evaluation call analyzes the complete session evidence:
+
+- Conversation history
+- Final email draft
+- Computed collaboration signals
+
+The evaluator generates an evidence-based interpretation of the user's AI collaboration behaviour, focusing on iteration quality, verification behaviour, feedback usage, and independent decision-making.
+
+---
+
+### 5. Assessment Report
+
+The user receives a final assessment report containing:
+
+- Collaboration metrics
+- Overall collaboration score
+- Behavioural strengths
+- Suggested improvements
+- AI-generated interpretation of the session
 
 ---
 
