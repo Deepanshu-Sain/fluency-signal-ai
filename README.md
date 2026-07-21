@@ -626,24 +626,29 @@ Generates:
 ---
 
 # Running Locally
+## 1. Prerequisites
 
-## 1. Clone repository
+Before running the application locally, ensure you have:
+
+- Node.js (LTS version)
+- npm
+- A Google Gemini API key
+  
+## 2. Clone the repository
 
 ```bash
-git clone <repository-url>
-
-cd the-fluency-signal
+git clone https://github.com/Deepanshu-Sain/fluency-signal-ai.git
+cd fluency-signal-ai
 ```
 
-
-## 2. Install dependencies
+## 3. Install dependencies
 
 ```bash
 npm install
 ```
 
 
-## 3. Configure environment variables
+## 4. Configure environment variables
 
 Create:
 
