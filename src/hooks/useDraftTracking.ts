@@ -380,11 +380,6 @@ export function useDraftTracking(
 
   },[draft]);
 
-
-
-
-
-
   return {
     snapshots,
   };
