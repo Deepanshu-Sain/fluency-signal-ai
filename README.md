@@ -12,7 +12,19 @@ Built as a full-stack Next.js application combining:
 - Behavioural signal extraction
 - LLM-generated evaluation feedback
 
+---
+# Demo
 
+A short walkthrough video demonstrating:
+
+- Completing the writing task
+- Collaborating with AI
+- Editing the email
+- Generating the assessment report
+
+https://github.com/user-attachments/assets/94d0c702-b443-49b5-849a-a66f1f8ff8da
+
+---
 ## Overview
 
 The Fluency Signal simulates a real-world workflow:
@@ -867,21 +879,6 @@ With more time, improvements would include:
 - Production database
 - Analytics dashboard
 - More behavioural signals
-
-
----
-
-# Demo
-
-A short walkthrough video demonstrating:
-
-- Completing the writing task
-- Collaborating with AI
-- Editing the email
-- Generating the assessment report
-
-
-https://github.com/user-attachments/assets/94d0c702-b443-49b5-849a-a66f1f8ff8da
 
 
 ---
